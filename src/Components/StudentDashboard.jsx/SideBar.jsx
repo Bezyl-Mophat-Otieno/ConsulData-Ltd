@@ -1,34 +1,68 @@
 import React from 'react'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import menuItems from '../../Items'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { useReducer } from 'react'
+import { faBookOpen} from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import { faBookOpenReader } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faInfo } from '@fortawesome/free-solid-svg-icons'
+import { GlobalContext } from '../Context/GlobalProvider'
+import { faCalculator } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react'
 function SideBar({children}) {
+   const {reducer , state , dispatch , initialState} = useContext(GlobalContext)
     const [isOpen,setIsOpen] = useState(true)
     const toggle = ()=>{
      return    setIsOpen((prev)=>{
             return !prev
         })
-
     }
-    // using UseReducer to Manage All state Logic of the Menu Items
-    const initialState = {
-            showDash:true,
-            showAllCourses:false,
-            showMyCourses:true,
-            showNotePad:false,
-            showCategories:false,
-            showContacts:false,
-            showTutorials:false
-    }
-    //useReducer Implementation
-const reducer = ()=>{
     
-}
+    const allCourses = ()=>{
+        dispatch({type:"Allcourses"})
+        reducer(initialState,{type:"Allcourses"}) 
 
-const [state , dispatch] = useReducer(reducer,initialState)
+    }
+    
+    const myCourses = ()=>{
+        dispatch({type:"MyCourses"})
+        reducer(initialState,dispatch) 
+        
+    }
+    
+    const myGrades = ()=>{
+        dispatch({type:"Allcourses"})
+        reducer(initialState,dispatch) 
+        console.log(state.showAllCourses)
+        
+    }
+    
+    const allResources = ()=>{
+        dispatch({type:"Resources"})
+        reducer(initialState,dispatch) 
+        console.log(state.showAllCourses)
+        
+    }
+    
+    const myCart = ()=>{
+        dispatch({type:"Allcourses"})
+        reducer(initialState,dispatch) 
+        
+    }
+    
+    const about = ()=>{
+        dispatch({type:"About"})
+        reducer(initialState,dispatch) 
+        
+    }
+  
+    const myNotepad = ()=>{
+        dispatch({type:"Notepad"})
+        reducer(initialState,dispatch) 
+        
+    }
 
     return (
         <div className='SideBar-Container'>
@@ -38,15 +72,39 @@ const [state , dispatch] = useReducer(reducer,initialState)
             <div className='bars' onClick={toggle}  style={{ marginLeft:isOpen ? "50px" : "0"}}> <FontAwesomeIcon icon={faBars}/></div>
            </div>
        <div className='menu-Items'>
-     {
-        menuItems.map((item)=>{
-            // The Other div will carry the Icons
-            return <div className='link d-flex ' style={{ display:isOpen ? "block" : "none"}} >  
-            <span class><FontAwesomeIcon icon={item.icon}/> </span>
-            <div><Link className='d-block text-light' to={item.path}> {item.name} </Link></div>
-            </div> 
-        })
-     }
+     
+       
+            <div className='link d-flex ' onClick={allCourses} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faBookOpen}/> </span>
+            <div><Link className='d-block text-light'> All Courses</Link></div>
+            </div>
+            <div className='link d-flex ' onClick={myCourses} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faBookOpenReader}/> </span>
+            <div><Link className='d-block text-light' > MyCourses</Link></div>
+            </div>
+            <div className='link d-flex ' onClick={myGrades} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faCalculator}/> </span>
+            <div><Link className='d-block text-light' > Grades & Assessments </Link></div>
+            </div>
+            <div className='link d-flex ' onClick={allResources} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faListAlt}/> </span>
+            <div><Link className='d-block text-light' > Resources</Link></div>
+            </div>
+            <div className='link d-flex ' onClick={myNotepad} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faShoppingCart}/> </span>
+            <div><Link className='d-block text-light' > NotePad</Link></div>
+             </div>
+             <div className='link d-flex ' onClick={myCart} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faShoppingCart}/> </span>
+            <div><Link className='d-block text-light' > cart</Link></div>
+             </div>
+             <div className='link d-flex ' onClick={about} style={{ display:isOpen ? "block" : "none"}} >  
+            <span class><FontAwesomeIcon icon={faInfo}/> </span>
+            <div><Link className='d-block text-light' >About</Link></div>
+             </div>
+            
+    
+    
 
        </div>
         </div>

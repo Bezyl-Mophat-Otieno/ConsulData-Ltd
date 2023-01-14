@@ -33,8 +33,6 @@ function App() {
               <ProtectedRoute user={learner}>
                  <SideBar>
                   <ContentLearnerDashboard/>
-                  <CoursesFetched/>
-
                  </SideBar>
               </ProtectedRoute> }/>
       </Route>
