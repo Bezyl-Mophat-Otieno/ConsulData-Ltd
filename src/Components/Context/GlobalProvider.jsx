@@ -16,6 +16,7 @@ function GlobalProvider({children}) {
     showDash:true,
     showAllCourses:false,
     showMyCourses:true,
+    showGrades:false,
     showNotePad:false,
     showResources:false,
     showAbout:false,
@@ -28,6 +29,8 @@ const reducer = (state,action)=>{
       return { ...initialState,showAllCourses:true,showMyCourses:false}
       case "MyCourses":
         return { ...initialState , showAllCourses : false}
+        case "MyGrades":
+          return {...initialState , showMyCourses:false , showGrades:true}
         case "NotePad":
           return { ...initialState , showNotePad : true , showAllCourses:false,showMyCourses:false}
             case "Resources":

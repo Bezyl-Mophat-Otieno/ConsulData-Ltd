@@ -2,9 +2,7 @@ import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { GlobalContext } from '../Context/GlobalProvider';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from './SearchBar';
 import courses from './../../data';
 
 
@@ -35,15 +33,8 @@ const uniqueCategory = [...new Set(categories)]
               </NavDropdown> 
               
                </div>
-  <div className='col-12 col-md-4'>
-    <form class="d-flex  ">
-        <input class="form-control me-2" type="search" placeholder="Search Course" aria-label="Search"
-         onChange={(e)=>setSearchTerm(e.target.value)} value={searchTerm} />
-         <Link to={`/courses/${searchTerm}`} ><button class="btn btn-outline-dark" type="submit" > 
-         <FontAwesomeIcon  icon={faSearch}/> </button></Link>
-        
-      </form>
-  </div>
+              <SearchBar/>
+
   </div>  
   </div>
   <div className='popular-searches mb-5'> <span className='course-tittle text-secondary fs-5 fw-5 text-decoration-underline'>Popular Searches </span>: Data Analysis, Photoshop, Graphic Design, Web Development, Digital Marketing</div>

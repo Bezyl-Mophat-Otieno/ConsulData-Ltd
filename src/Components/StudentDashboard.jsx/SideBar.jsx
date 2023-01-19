@@ -21,46 +21,40 @@ function SideBar({children}) {
     }
     
     const allCourses = ()=>{
+    
         dispatch({type:"Allcourses"})
-        reducer(initialState,{type:"Allcourses"}) 
+        
 
     }
     
     const myCourses = ()=>{
-        dispatch({type:"MyCourses"})
-        reducer(initialState,dispatch) 
-        
+      
+      dispatch({type:"MyCourses"})        
     }
     
     const myGrades = ()=>{
-        dispatch({type:"Allcourses"})
-        reducer(initialState,dispatch) 
-        console.log(state.showAllCourses)
+        dispatch({type:"MyGrades"}) 
         
     }
     
     const allResources = ()=>{
-        dispatch({type:"Resources"})
-        reducer(initialState,dispatch) 
-        console.log(state.showAllCourses)
+       dispatch({type:"Resources"})
         
     }
     
     const myCart = ()=>{
-        dispatch({type:"Allcourses"})
-        reducer(initialState,dispatch) 
+     dispatch({type:"Cart"})
+ 
         
     }
     
     const about = ()=>{
         dispatch({type:"About"})
-        reducer(initialState,dispatch) 
         
     }
   
     const myNotepad = ()=>{
-        dispatch({type:"Notepad"})
-        reducer(initialState,dispatch) 
+        dispatch({type:"NotePad"})
         
     }
 
@@ -72,8 +66,6 @@ function SideBar({children}) {
             <div className='bars' onClick={toggle}  style={{ marginLeft:isOpen ? "50px" : "0"}}> <FontAwesomeIcon icon={faBars}/></div>
            </div>
        <div className='menu-Items'>
-     
-       
             <div className='link d-flex ' onClick={allCourses} style={{ display:isOpen ? "block" : "none"}} >  
             <span class><FontAwesomeIcon icon={faBookOpen}/> </span>
             <div><Link className='d-block text-light'> All Courses</Link></div>
@@ -91,7 +83,7 @@ function SideBar({children}) {
             <div><Link className='d-block text-light' > Resources</Link></div>
             </div>
             <div className='link d-flex ' onClick={myNotepad} style={{ display:isOpen ? "block" : "none"}} >  
-            <span class><FontAwesomeIcon icon={faShoppingCart}/> </span>
+            <span class><FontAwesomeIcon icon={faBookOpen}/> </span>
             <div><Link className='d-block text-light' > NotePad</Link></div>
              </div>
              <div className='link d-flex ' onClick={myCart} style={{ display:isOpen ? "block" : "none"}} >  

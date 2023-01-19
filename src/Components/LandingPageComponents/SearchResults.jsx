@@ -12,6 +12,7 @@ function SearchResults() {
   const results = courses.filter((course)=>{
   return   course.name.match(searchTerm)
   } )
+  console.log(results)
           if(results.length>0){
 
             return (

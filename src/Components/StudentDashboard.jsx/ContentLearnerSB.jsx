@@ -9,13 +9,19 @@ import About from './About'
  import { useContext } from 'react'
  import { GlobalContext } from '../Context/GlobalProvider'
 function ContentLearnerDashboard() {
-  const {reducer , state , dispatch , initialState} = useContext(GlobalContext)
+  const {state } = useContext(GlobalContext)
 
 
   return (
    <>
     { state.showAllCourses && <CoursesFetched/>}
     { state.showMyCourses && <Mycourses/>}
+    { state.showGrades && <Grades/>}
+    { state.showNotePad && <Notepad/>}
+    { state.showResources && <Resources/>}
+    { state.showAbout && <About/>}
+    { state.showCart && <Cart/>}
+
 
 
    </>

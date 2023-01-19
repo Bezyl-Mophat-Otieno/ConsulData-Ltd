@@ -4,17 +4,24 @@ import protoImage from '../../Images/ImageResources/marketing.jpg'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-
+import { GlobalContext } from '../Context/GlobalProvider'
+import { useContext } from 'react'
 
 function CoursesFetched() {
 
-  const [courseList , setCourseList] =    useState(courses)
+  const{ searching ,searchTerm } = useContext(GlobalContext)
+  //Returns an array that matches the condition
+  const SearchResults = courses.filter((course)=>{
+    return course.name.match(searchTerm)
+  }) 
 
+  const [courseList , setCourseList] =  useState(searching ? SearchResults : courses  )
+ console.log(searching)
   return (
     <div class="row row-cols-1 row-cols-md-3 g-4">
 {
      courseList.map((course)=>{
-      const{id,name,price} = course
+      const{id,name,price} = course 
         return <div class="col">
         <a href='#'>
        <div className="card shadow-lg course" key={id}>
