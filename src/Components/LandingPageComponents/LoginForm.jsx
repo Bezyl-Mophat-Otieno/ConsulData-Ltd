@@ -26,9 +26,11 @@ function LoginForm() {
   if(user.email === loginEmail && user.password === loginPassword){
   setLoginSuccess(true)
     setPassword('')
-    navigate('/dashboard')
+    
 
   }else{
+    console.log(user.password)
+    console.log(loginPassword)
   setLoginSuccess(false)
   setEmail('')
   setPassword('')

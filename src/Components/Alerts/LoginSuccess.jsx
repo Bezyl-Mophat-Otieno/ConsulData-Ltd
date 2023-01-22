@@ -7,7 +7,7 @@ import { useState } from 'react';
 function LoginSuccess() {
     const { loginSuccess,setLoginSuccess} = useContext(GlobalContext)
       if(loginSuccess) {
-        return  (   <Alert variant="success" onClose={()=>setLoginSuccess()} dismissible>
+        return  (<Alert variant="success" onClose={()=>setLoginSuccess()} dismissible>
         <p>Login Successfully.</p>
       </Alert>)
       } else {

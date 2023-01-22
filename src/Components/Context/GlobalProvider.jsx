@@ -11,6 +11,7 @@ function GlobalProvider({children}) {
     const [searchTerm , setSearchTerm] = useState('')
     const [renderRegModal ,setrenderRegModal ] = useState(true)
     const [renderLogModal ,setrenderLogModal] = useState(true)
+    const [userTemp , setUserTemp] = useState ()
   // using UseReducer to Manage All state Logic of the Menu Items
   const initialState = {
     showDash:true,
@@ -65,7 +66,10 @@ const [state , dispatch] = useReducer(reducer,initialState)
         setrenderRegModal,
         renderLogModal, 
         setrenderLogModal,
-        reducer,dispatch,state
+        reducer,dispatch,state,
+        userTemp, setUserTemp
+
+
     }}>
 
            {children}

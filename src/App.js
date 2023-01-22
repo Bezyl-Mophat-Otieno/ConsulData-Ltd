@@ -1,5 +1,4 @@
 import './App.css';
-import LandingPage from './Components/LandingPageComponents/LandingPage';
 import { GlobalContext } from './Components/Context/GlobalProvider';
 import { BrowserRouter, Routes ,Route} from 'react-router-dom';
 import CoursesFetched from './Components/LandingPageComponents/CoursesFetched';
@@ -11,6 +10,10 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import ContentLearnerDashboard from './Components/StudentDashboard.jsx/ContentLearnerSB';
 import SharedLayoutStudentDashboard from './Components/SharedLayoutStudentDashboard';
 import SideBar from './Components/StudentDashboard.jsx/SideBar';
+import LearnerDashboard from './Pages/LearnerDashboard';
+import BlogPage from './Pages/blogPage/BlogPage';
+import LandingPage from './Pages/landingpage/LandingPage';
+import About from './Pages/aboutpage/About';
 function App() {
  const {learner } = useContext(GlobalContext)
 
@@ -20,6 +23,8 @@ function App() {
         <Routes>
             <Route path='/' element={<SharedLayoutMain user={learner} />} >
                <Route index element={<LandingPage/>}/>
+               <Route path='/blog' element={<BlogPage/>}/>
+               <Route path='/about' element={<About/>}/>
                <Route path='courses' >
                   <Route index element={<CoursesFetched/>}/>
                   <Route path=':searchTerm' element={<SearchResults/>} />
@@ -32,7 +37,7 @@ function App() {
                 <Route path='learner' user={learner} element={   
               <ProtectedRoute user={learner}>
                  <SideBar>
-                  <ContentLearnerDashboard/>
+                  <LearnerDashboard/>
                  </SideBar>
               </ProtectedRoute> }/>
       </Route>

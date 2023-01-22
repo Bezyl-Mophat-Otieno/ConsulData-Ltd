@@ -30,7 +30,7 @@ function NavBar() {
             <Nav className="me-auto">
             <Nav.Link href="/" className='fw-bold'  > HOME </Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/crs/blog">Blog</Nav.Link>
+              <Nav.Link href="/blog">Blog</Nav.Link>
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

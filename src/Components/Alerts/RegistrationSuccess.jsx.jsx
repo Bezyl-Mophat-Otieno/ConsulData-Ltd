@@ -4,6 +4,7 @@ import { GlobalContext } from '../Context/GlobalProvider'
 import { Alert } from 'bootstrap'
 function RegistrationSuccess() {
   const {registerSuccess,setRegisterSuccess} = useContext(GlobalContext)
+  console.log(registerSuccess)
   if(registerSuccess) {
     return  (   <Alert variant="success" onClose={()=>setRegisterSuccess()} dismissible>
     <p>Registration successFul , You Can now Log in .</p>

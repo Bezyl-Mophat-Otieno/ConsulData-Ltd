@@ -45,25 +45,20 @@ const inputValidation = ()=>{
   }else{
     setemailInputErr(false)
   }
-  if (password === ''){
+  if (password === '' || ConfirmP === '' ){
     setpasswordInputErr(true)
+    setconfirmPInputErr(true)
     validationErrorCount++
   }else{
     setpasswordInputErr(false)
-  }
-  if (ConfirmP === ''){
-    validationErrorCount++
-    setconfirmPInputErr(true)
-  }else{
     setconfirmPInputErr(false)
-    }
-
     if(password === ConfirmP){
       setMatch(true)
     }else {
       validationErrorCount++
       setMatch(false)
     }
+  }
     return validationErrorCount;
 
 }
@@ -108,8 +103,8 @@ const successRegistration = ()=>{
 
     />
   </div>
-       { passwordInputErr ? <div className="form-text text-danger d-flex justify-content-center">
-       This field cannot be empty </div> : match ? '' :
+       { passwordInputErr ? (<div className="form-text text-danger d-flex justify-content-center">
+       This field cannot be empty </div>): match || match === undefined ? '' :
         <div  className="form-text text-danger d-flex justify-content-center">Passwords do not match . </div>  }
   <div class="mb-3 ms-5 me-5 d-flex">
     <label for="exampleInputPassword1" class="form-label me-4"><FontAwesomeIcon icon={faKey} /></label>
@@ -117,7 +112,7 @@ const successRegistration = ()=>{
        placeholder="Confirm Password" aria-label="Password"  onChange={(e)=>setConfirmP(e.target.value)} value={ConfirmP}/>
   </div>
   { passwordInputErr ? <div className="form-text text-danger d-flex justify-content-center">
-       This field cannot be empty </div> : match ? '' :
+       This field cannot be empty </div> : match || match === undefined ? '' :
         <div  className="form-text text-danger d-flex justify-content-center">Passwords do not match . </div>  }  <div class=" d-flex justify-content-center mb-3 ">
   <button type="submit" class="btn btnRegister ">Register <FontAwesomeIcon icon={faRegistered} /></button>
   </div>
