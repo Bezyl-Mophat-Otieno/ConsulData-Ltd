@@ -2,7 +2,7 @@ import React from 'react'
 
 function Grades() {
   return (
-    <div>Grades</div>
+    <div>Grades & Assessments</div>
   )
 }
 

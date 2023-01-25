@@ -5,8 +5,8 @@ import Grades from './Grades'
 import Mycourses from './Mycourses'
 import Resources from './Resources'
 import Notepad from './Notepad'
-import About from './About'
  import { useContext } from 'react'
+ import About from '../../Pages/aboutpage/About'
  import { GlobalContext } from '../Context/GlobalProvider'
 function ContentLearnerDashboard() {
   const {state } = useContext(GlobalContext)

@@ -21,24 +21,24 @@ text-decoration: none;
 box-sizing: border-box;
 width:auto;
 height: 40px;
-background: #FF8F0B;
+color: #be9656;
 border: 1px solid #000000;
 border-radius: 15px;
 justify-content: center;
   }
   .btnLogin:hover{
-    border: 1px solid #FF8F0B;
+    color: #be9656;
 
   }
   .btnRegister:hover{
-    border: 1px solid #FF8F0B;
+    color: #be9656;
 
   }
   .btnRegister{
     box-sizing: border-box;
     width: auto;
     height: 40px;
-    background: #FF8F0B;
+    color: #be9656;
     border: 1px solid #000000;
     border-radius: 15px;
       }
@@ -77,14 +77,14 @@ color: white;
 box-sizing: border-box;
 width:auto;
 height: 40px;
-background: rgb(255, 143, 11);
+color: #be9656;
 border: 1px solid black;
 border-radius: 15px;
 justify-content: center;
 
       }
       .call-to-action:hover{
-        border: 1px solid #FF8F0B;
+        color: #be9656;
 
       }
       .price-tag{
@@ -120,8 +120,8 @@ line-height: 60px;
 letter-spacing: -0.055em;
     }
     .popular-searches{
-color: #FF8F0B;     
-font-family: monospace;     
+      color: #be9656;
+      font-family: monospace;     
  font-size: large;
       font-weight: lighter;
       margin-left:50px
@@ -166,52 +166,7 @@ font-family: monospace;
         width:100%;
         padding : 20px;
       }
-      .side-bar{
-        background-color: black;
-        color: white;
-        height: 100vh;
-        width: 2300px;
-        transition: all 0.5s;
-
-      }
-      .menu-Items{
-        color: white;
-      }
-      .top-section{
-        display: flex;
-        justify-content: center;
-        padding: 20px 15px;
-      }
-      .logo{
-        font-size: 30px;
-
-      }
-
-      .bars{
-        font-size: 25px;
-        display: flex;
-        margin-left: 50px;
-        padding-top: 6px;
-
-      }
-
-      .link{
-        display: flex;
-        padding: 10px 20px;
-        gap: 15px;
-        transition: all 0.5s;
-      }
-      .link:hover{
-        background-color: #FF8F0B;
-        color: black;
-        transition: all 0.5s;
-
-      }
-      .active{
-        background-color: #FF8F0B;
-        color: black;
-
-      }
+      
       .icon{
        font-size: 15px;
       }

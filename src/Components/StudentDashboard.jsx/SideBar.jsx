@@ -11,6 +11,7 @@ import { faInfo } from '@fortawesome/free-solid-svg-icons'
 import { GlobalContext } from '../Context/GlobalProvider'
 import { faCalculator } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react'
+import './SideBar.css'
 function SideBar({children}) {
    const {reducer , state , dispatch , initialState} = useContext(GlobalContext)
     const [isOpen,setIsOpen] = useState(true)
@@ -65,7 +66,7 @@ function SideBar({children}) {
                   <h1 className='logo' style={{ display:isOpen ? "block" : "none"}}>Logo</h1>
             <div className='bars' onClick={toggle}  style={{ marginLeft:isOpen ? "50px" : "0"}}> <FontAwesomeIcon icon={faBars}/></div>
            </div>
-       <div className='menu-Items'>
+            <div className='menu-Items'>
             <div className='link d-flex ' onClick={allCourses} style={{ display:isOpen ? "block" : "none"}} >  
             <span class><FontAwesomeIcon icon={faBookOpen}/> </span>
             <div><Link className='d-block text-light'> All Courses</Link></div>
@@ -78,10 +79,6 @@ function SideBar({children}) {
             <span class><FontAwesomeIcon icon={faCalculator}/> </span>
             <div><Link className='d-block text-light' > Grades & Assessments </Link></div>
             </div>
-            <div className='link d-flex ' onClick={allResources} style={{ display:isOpen ? "block" : "none"}} >  
-            <span class><FontAwesomeIcon icon={faListAlt}/> </span>
-            <div><Link className='d-block text-light' > Resources</Link></div>
-            </div>
             <div className='link d-flex ' onClick={myNotepad} style={{ display:isOpen ? "block" : "none"}} >  
             <span class><FontAwesomeIcon icon={faBookOpen}/> </span>
             <div><Link className='d-block text-light' > NotePad</Link></div>
@@ -92,7 +89,7 @@ function SideBar({children}) {
              </div>
              <div className='link d-flex ' onClick={about} style={{ display:isOpen ? "block" : "none"}} >  
             <span class><FontAwesomeIcon icon={faInfo}/> </span>
-            <div><Link className='d-block text-light' >About</Link></div>
+            <div><Link className='d-block text-light'>About</Link></div>
              </div>
             
     

@@ -1,12 +1,15 @@
 import React from 'react'
 import './blogSideBar.css'
+import protoImage from '../../Images/ImageResources/blogger.jpg'
+import { Link } from 'react-router-dom'
 function BlogSideBar() {
   return (
     <div className="sidebar">
     <div className="sidebarItem">
-      <span className="sidebarTitle">ABOUT ME</span>
-      <img
-        src="https://images.pexels.com/photos/320617/pexels-photo-320617.jpeg?auto=compress&cs=tinysrgb&w=600"
+      <span className="sidebarTitle">ABOUT AUTHOR</span>
+      <Link to=''></Link>
+      <img className='profilePic'
+        src={protoImage}
         alt=""
       />
       <p>

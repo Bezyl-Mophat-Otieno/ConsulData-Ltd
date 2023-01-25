@@ -8,9 +8,10 @@
     transition-property: all;
     transition-delay: 0.25s;
     transition-timing-function: 10s;
+    transition: 20ms;
   }
   .blog:hover{
-    transform: scale(1.025);
+    transform: scale(1.015);
     box-shadow: -10px 10px 10px rgba(2, 136, 96, 0.15);;
   }  
   .blogImg {
@@ -60,7 +61,7 @@
     font-size: 14px;
     line-height: 24px;
     color: #444444;
-    margin-top: 15px;
+    margin: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

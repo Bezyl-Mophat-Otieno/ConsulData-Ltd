@@ -26,7 +26,7 @@
     font-family: "Varela Round", sans-serif;
     font-size: 12px;
     line-height: 19px;
-    color: #222222;
+    color: #be9656;
     font-weight: 600;
   }
   
@@ -64,4 +64,11 @@
     font-size: 16px;
     margin-left: 10px;
   }
-  
+  .profilePic{
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }

@@ -10,25 +10,56 @@ function About() {
     return setUserTemp(true)
   },[])
   return (
-    <div className="singlePost">
-    <div className="singlePostWrapper">
+    <div className="aboutPost">
+    <div className="aboutPostWrapper">
       <img
-        className="singlePostImg"
+        className="aboutPostImg"
         src={protoImage}
         alt=""
       />
-      <h1 className="singlePostTitle">
+      <h1 className="aboutPostTitle">
       ConsuliData Limited Company.
       </h1>
-      <div className="singlePostInfo">
+
+      <div className="aboutPostInfo">
         <span>
          Mananaging Director:
-          <b className="singlePostAuthor">
+          <b className="aboutPostAuthor">
               Deida 
           </b>
-        </span>
+        </span> <br/>
+        <span>
+        P.O BOX:
+          <b className="aboutPostAuthor">
+              80100-76
+          </b>
+        </span> <br/>      
+        <span>
+        LOCATION:
+          <b className="aboutPostAuthor">
+              Kisii-Kenya
+          </b>
+        </span> <br/> 
+        <span>
+         TELL NO:
+          <b className="aboutPostAuthor">
+            34567890287 
+          </b>
+        </span> <br/>
+        <span>
+         EMAIL:
+          <b className="aboutPostAuthor">
+            crs.kisii@gmail.com
+          </b>
+          </span> <br/>
+          <span>
+         Website:
+          <b className="aboutPostAuthor">
+          https://crs.kisii.com
+          </b>
+        </span> <br/>
       </div>
-      <p className="singlePostDesc">
+      <p className="aboutPostDesc">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error
         quibusdam ipsa quis quidem doloribus eos, dolore ea iusto impedit!
         Voluptatum necessitatibus eum beatae, adipisci voluptas a odit modi

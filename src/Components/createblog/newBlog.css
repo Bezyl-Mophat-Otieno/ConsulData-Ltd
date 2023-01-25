@@ -19,7 +19,6 @@
   }
   
   .writeFormGroup {
-    margin-left: 150px;
     display: flex;
     align-items: center;
   }
@@ -54,6 +53,7 @@
   }
   
   .writeText {
+    border: 2px solid rgb(124, 117, 117);
     width: 70vw;
     height: 100vh;
     font-family: inherit;

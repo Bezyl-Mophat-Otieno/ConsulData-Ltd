@@ -1,0 +1,47 @@
+.side-bar{
+    margin-top : 33px;
+    background-color: rgb(124, 117, 117);
+    color: white;
+    height: auto;
+    width: 2300px;
+    transition: all 0.5s;
+
+  }
+  .menu-Items{
+    color: white;
+  }
+  .top-section{
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+  }
+  .logo{
+    font-size: 30px;
+
+  }
+
+  .bars{
+    font-size: 25px;
+    display: flex;
+    margin-left: 50px;
+    padding-top: 6px;
+
+  }
+
+  .link{
+    display: flex;
+    padding: 10px 20px;
+    gap: 15px;
+    transition: all 0.5s;
+  }
+  .link:hover{
+    background-color: #FF8F0B;
+    color: black;
+    transition: all 0.5s;
+
+  }
+  .active{
+    background-color: #FF8F0B;
+    color: black;
+
+  }

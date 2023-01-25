@@ -7,6 +7,8 @@ import { faLandMineOn } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from '../LandingPageComponents/SearchBar';
 import { GlobalContext } from './../Context/GlobalProvider';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom'
+import protoImage from '../../Images/ImageResources/blogger.jpg';
 function LearnerNavBar() {
   const {state} = useContext(GlobalContext)
   return (
@@ -20,6 +22,11 @@ function LearnerNavBar() {
                 </Nav>
                   { (state.showAllCourses || state.showMyCourses ) && <SearchBar/> }
                   <Nav className='d-flex'>
+                  <div className="topRight">
+                   <Link to="/">
+                        <img className="profilePic" src={protoImage} alt="" />
+                   </Link>
+                   </div>
                     <Nav.Link href='/' className=' w-5 ms-5   text-danger' >  
                     Log-out <FontAwesomeIcon  icon={faLandMineOn}/>
                     </Nav.Link>

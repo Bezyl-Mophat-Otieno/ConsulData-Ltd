@@ -10,10 +10,11 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import ContentLearnerDashboard from './Components/StudentDashboard.jsx/ContentLearnerSB';
 import SharedLayoutStudentDashboard from './Components/SharedLayoutStudentDashboard';
 import SideBar from './Components/StudentDashboard.jsx/SideBar';
-import LearnerDashboard from './Pages/LearnerDashboard';
 import BlogPage from './Pages/blogPage/BlogPage';
 import LandingPage from './Pages/landingpage/LandingPage';
 import About from './Pages/aboutpage/About';
+import LearnerDashboard from './Pages/LearnerDashboard/LearnerDashboard';
+import Single from './Pages/singleCourse/Single';
 function App() {
  const {learner } = useContext(GlobalContext)
 
@@ -28,6 +29,9 @@ function App() {
                <Route path='courses' >
                   <Route index element={<CoursesFetched/>}/>
                   <Route path=':searchTerm' element={<SearchResults/>} />
+                  <Route path='/courses/course'>
+                  <Route path=':courseName' element={<Single/>} />
+                  </Route>
                   <Route path='category' >
                     <Route path=':categoryType' element={<CourseCategory/>} />
                   </Route>

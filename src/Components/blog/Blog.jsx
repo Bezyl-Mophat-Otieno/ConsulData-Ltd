@@ -1,11 +1,12 @@
 import React from 'react'
 import './Blog.css'
+import protoImage from '../../Images/ImageResources/cybersecurity.jpg'
 function Blog() {
   return (
     <div className="blog">
     <img
       className="blogImg"
-      src="https://images.pexels.com/photos/159652/table-food-book-newspaper-159652.jpeg?auto=compress&cs=tinysrgb&w=600"
+      src={protoImage}
       alt=""
     />
     <div className="blogInfo">
