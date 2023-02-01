@@ -22,12 +22,7 @@ function About() {
       </h1>
 
       <div className="aboutPostInfo">
-        <span>
-         Mananaging Director:
-          <b className="aboutPostAuthor">
-              Deida 
-          </b>
-        </span> <br/>
+
         <span>
         P.O BOX:
           <b className="aboutPostAuthor">
@@ -59,6 +54,12 @@ function About() {
           </b>
         </span> <br/>
       </div>
+      <span>
+         Mananaging Director:
+          <b className="aboutPostAuthor">
+              Deida 
+          </b>
+        </span> <br/>
       <p className="aboutPostDesc">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error
         quibusdam ipsa quis quidem doloribus eos, dolore ea iusto impedit!

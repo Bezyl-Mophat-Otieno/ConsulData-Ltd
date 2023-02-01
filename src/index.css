@@ -58,12 +58,11 @@ border: 1px solid white;
 box-shadow: -10px 4px 4px rgba(0, 0, 0, 0.15);
 transition-property: all;
 transition-delay: 0.25s;
-transition-timing-function: 10s;
+transition: 0.25s;
       }
       .course:hover{
-        
 transform: scale(1.025);
-box-shadow: -10px 10px 10px rgb(255, 143, 11,0.15);;
+box-shadow: -10px 10px 10px rgba(87, 86, 86, 0.15);;
 
 
 
@@ -166,7 +165,9 @@ letter-spacing: -0.055em;
         width:100%;
         padding : 20px;
       }
-      
       .icon{
        font-size: 15px;
       }
+.top{
+  position : sticky;
+}

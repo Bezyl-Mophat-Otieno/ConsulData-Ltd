@@ -9,19 +9,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal'
-
+import { GlobalContext } from '../Context/GlobalProvider';
+import { useContext } from 'react';
 
 function NavBar() {
-  // useEffect(()=>{
-  // const allCat = courses.map((course)=>{
-  //   return course.category
-  // })
-  //  console.log(allCat)
-  // },[])
+     const {show , setShow} = useContext(GlobalContext)
+  const onClick = ()=>{
+    setShow((prev)=>{
+    return !prev
+   })
+  }
   return (
 <>
 <RegisterModal/>
 <LoginModal/>
+     <div className='top'>
+
       <Navbar bg="light" expand="lg" >
         <Container >
           <Navbar.Brand href="/"> CRS <FontAwesomeIcon  icon={faGraduationCap}/>  </Navbar.Brand>
@@ -30,7 +33,7 @@ function NavBar() {
             <Nav className="me-auto">
             <Nav.Link href="/" className='fw-bold'  > HOME </Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
-              <Nav.Link href="/blog">Blog</Nav.Link>
+              <Nav.Link href="/blogs">Blog</Nav.Link>
               <NavDropdown title="Services" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -42,13 +45,14 @@ function NavBar() {
               <Nav className='d-flex'>
                 <Nav.Item className=' w-5 ms-5 btn btn-outline-dark'  data-bs-toggle="modal" data-bs-target="#register-modal"> 
                  Register <FontAwesomeIcon  icon={faRegistered}/></Nav.Item>
-                <Nav.Item  className=' w-5 ms-5 btn btn-outline-dark' data-bs-toggle="modal" data-bs-target="#login-modal">  
+                <Nav.Item onClick={onClick} className=' w-5 ms-5 btn btn-outline-dark' data-bs-toggle="modal" data-bs-target="#login-modal">  
                 Login <FontAwesomeIcon  icon={faSignInAlt}/>
                 </Nav.Item>
               </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+     </div>
 </>
     );
   }

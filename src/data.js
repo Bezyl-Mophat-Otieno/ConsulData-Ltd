@@ -39,7 +39,7 @@ const courses = [
     },
     {
       id: 'recoM2MyHJGHLVi5l',
-      name: 'UX/UI',
+      name: 'UX and UI Design',
       image:'../../Images/ImageResources/design.jpg',
         price:5500,
         category:'Design',

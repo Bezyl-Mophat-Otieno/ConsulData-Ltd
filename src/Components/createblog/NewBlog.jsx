@@ -32,7 +32,7 @@ function NewBlog() {
         />
       </div>
       <button className="writeSubmit" type="submit">
-        Publish
+       Save
       </button>
     </form>
   </div>

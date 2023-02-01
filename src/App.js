@@ -2,19 +2,20 @@ import './App.css';
 import { GlobalContext } from './Components/Context/GlobalProvider';
 import { BrowserRouter, Routes ,Route} from 'react-router-dom';
 import CoursesFetched from './Components/LandingPageComponents/CoursesFetched';
-import SearchResults from './Components/LandingPageComponents/SearchResults';
 import SharedLayoutMain from './Components/SharedLayoutMain';
 import CourseCategory from './Components/LandingPageComponents/CourseCategory';
 import { useContext, useState } from 'react';
 import ProtectedRoute from './Components/ProtectedRoute';
-import ContentLearnerDashboard from './Components/StudentDashboard.jsx/ContentLearnerSB';
 import SharedLayoutStudentDashboard from './Components/SharedLayoutStudentDashboard';
-import SideBar from './Components/StudentDashboard.jsx/SideBar';
+import SideBar from './Components/StudentDashboard/SideBar';
 import BlogPage from './Pages/blogPage/BlogPage';
 import LandingPage from './Pages/landingpage/LandingPage';
 import About from './Pages/aboutpage/About';
 import LearnerDashboard from './Pages/LearnerDashboard/LearnerDashboard';
 import Single from './Pages/singleCourse/Single';
+import Cart from './Components/StudentDashboard/Cart';
+import CompleteB from './Components/completeBlog/CompleteB';
+
 function App() {
  const {learner } = useContext(GlobalContext)
 
@@ -24,11 +25,14 @@ function App() {
         <Routes>
             <Route path='/' element={<SharedLayoutMain user={learner} />} >
                <Route index element={<LandingPage/>}/>
-               <Route path='/blog' element={<BlogPage/>}/>
+               <Route path='/blogs' >
+               <Route index element={<BlogPage/>}/>
+               <Route path='/blogs/singleblog' element={<CompleteB/>}/>
+               </Route>
                <Route path='/about' element={<About/>}/>
+               <Route path='/cart' element={<Cart/>} />
                <Route path='courses' >
                   <Route index element={<CoursesFetched/>}/>
-                  <Route path=':searchTerm' element={<SearchResults/>} />
                   <Route path='/courses/course'>
                   <Route path=':courseName' element={<Single/>} />
                   </Route>

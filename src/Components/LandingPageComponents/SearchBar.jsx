@@ -16,7 +16,7 @@ const {setSearchTerm,searchTerm , setSearching , searching } = useContext(Global
     <form class="d-flex  ">
         <input class="form-control me-2" type="search" placeholder="Search Course" aria-label="Search"
          onChange={onFieldChange} value={searchTerm} />
-         <Link to={`/courses/${searchTerm}`} ><button class="btn btn-outline-dark" type="submit" > 
+         <Link to={``} ><button class="btn btn-outline-dark" type="submit" > 
          <FontAwesomeIcon  icon={faSearch}/> </button></Link>
         
       </form>

@@ -12,7 +12,10 @@ function GlobalProvider({children}) {
     const [renderRegModal ,setrenderRegModal ] = useState(true)
     const [renderLogModal ,setrenderLogModal] = useState(true)
     const [userTemp , setUserTemp] = useState ()
-  // using UseReducer to Manage All state Logic of the Menu Items
+    const [addedToCart , setAddedToCart] = useState(false)
+    const [cart,setCart] = useState([]) 
+    const [show , setShow] = useState(false)
+  // using ddedToCartUseReducer to Manage All state Logic of the Menu Items
   const initialState = {
     showDash:true,
     showAllCourses:false,
@@ -67,7 +70,10 @@ const [state , dispatch] = useReducer(reducer,initialState)
         renderLogModal, 
         setrenderLogModal,
         reducer,dispatch,state,
-        userTemp, setUserTemp
+        userTemp, setUserTemp,
+        cart,setCart,
+        addedToCart , setAddedToCart,
+        show , setShow
 
 
     }}>

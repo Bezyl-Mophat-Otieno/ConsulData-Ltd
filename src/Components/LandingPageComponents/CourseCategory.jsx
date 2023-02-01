@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import protoImage from  '../../Images/ImageResources/Analysis.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 function CourseCategory() {
 const {categoryType} = useParams()
 const results = courses.filter((course)=>{
@@ -17,7 +18,7 @@ const results = courses.filter((course)=>{
         results.map((result)=>{
           const{id,name,price} = result
             return <div class="col">
-            <a href='#'>
+            <Link to={`/courses/course/${name}`}>
            <div className="card course" key={id}>
            
           <img src={protoImage} className="card-img-top  course-thumbnail" alt=""/>
@@ -30,7 +31,7 @@ const results = courses.filter((course)=>{
       <div className='ms-5 price-tag'>ksh {price}/= </div>
       </div>
         </div>
-        </a>
+        </Link>
       </div>
          })
     }
